@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhnq5nk3qd7tr"]
+
+[ext_resource type="PackedScene" uid="uid://pjh2t532fh0i" path="res://Scenes/ground.tscn" id="1_4yht5"]
+[ext_resource type="PackedScene" uid="uid://c4ctm2apknci1" path="res://Scenes/trap.tscn" id="2_lkxat"]
+[ext_resource type="PackedScene" uid="uid://bd0blurnby1bc" path="res://Scenes/camera_3d.tscn" id="2_wc1vx"]
+[ext_resource type="PackedScene" uid="uid://4712kg6davop" path="res://Scenes/player.tscn" id="3_4gfnt"]
+
+[node name="Level" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("3_4gfnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53129, 0.5, -0.62671)
+
+[node name="Camera3D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_wc1vx")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 0.999999, 0, -1, -4.37113e-08, 0, 0, 0)
+target = NodePath("../Player")
+offset = Vector3(0, 5, 0)
+
+[node name="Ground" parent="." instance=ExtResource("1_4yht5")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.00721063, 0.999955, -0.00614976, -0.367364, 0.00836882, 0.93004, 0.930049, -0.00444697, 0.367408, -8.70271, 8.83309, 8.51594)
+
+[node name="Trap" parent="." instance=ExtResource("2_lkxat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.55214, 0.499999, 10.0609)
+
+[node name="Trap2" parent="." instance=ExtResource("2_lkxat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12669, 0.5, 2.28323)
+
+[node name="Trap3" parent="." instance=ExtResource("2_lkxat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.14629, 0.5, 6.25429)
+
+[node name="Trap4" parent="." instance=ExtResource("2_lkxat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78494, 0.500001, 1.59408)
+
+[node name="Trap5" parent="." instance=ExtResource("2_lkxat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.74379, 0.500001, -9.42426)
+
+[node name="Trap6" parent="." instance=ExtResource("2_lkxat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.67736, 0.5, -0.528322)
