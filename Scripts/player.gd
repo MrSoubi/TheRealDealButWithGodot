@@ -8,16 +8,16 @@ const JUMP_VELOCITY = 4.5
 
 var canMove: bool = true
 
-func _ready() -> void:
+func _enter_tree() -> void:
 	health.current_health = health.max_health
 	health.on_died.connect(die)
+
+func take_damage(damage: int):
+	health.current_health = health.current_health - damage
 
 func die():
 	canMove = false
 	velocity = Vector3(0, 0, 0)
-
-func take_damage(damage: int):
-	health.current_health = health.current_health - damage
 
 func _physics_process(delta: float) -> void:
 	if not canMove:
