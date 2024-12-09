@@ -1,7 +1,7 @@
 class_name PlayerHealth
 extends Resource
 
-signal on_health_changed
+signal on_health_changed(int)
 signal on_died
 
 @export var max_health: int
@@ -10,7 +10,7 @@ signal on_died
 	get:
 		return current_health
 	set(value):
-		on_health_changed.emit()
+		on_health_changed.emit(value)
 		current_health = value
 		
 		if (current_health <= 0):
